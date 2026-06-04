@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — PostFrame</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: #1a1a1a;
+      background: #fff;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 60px 24px 80px;
+    }
+    h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 6px; }
+    .meta { font-size: 0.875rem; color: #666; margin-bottom: 40px; }
+    h2 { font-size: 1.1rem; font-weight: 700; margin: 36px 0 10px; }
+    p { margin-bottom: 14px; }
+    ul { padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; }
+    a { color: #1d9bf0; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    hr { border: none; border-top: 1px solid #eee; margin: 40px 0; }
+    .back { font-size: 0.875rem; color: #666; margin-bottom: 40px; display: block; }
+  </style>
+</head>
+<body>
+  <a href="/" class="back">← itzsrikanth.github.io</a>
+
+  <h1>Privacy Policy</h1>
+  <p class="meta">PostFrame Chrome Extension &nbsp;·&nbsp; Last updated: June 2025</p>
+
+  <p>PostFrame is a Chrome extension that lets you snapshot any X (formerly Twitter) post as a clean, shareable PNG card. This policy explains what data the extension accesses and how it is handled.</p>
+
+  <h2>What data does PostFrame access?</h2>
+  <p>When you are on x.com or twitter.com, PostFrame reads the following from the page DOM in your browser:</p>
+  <ul>
+    <li>Post text, author display name, and @handle of the post you click to snapshot</li>
+    <li>The post's timestamp, engagement counts (replies, reposts, likes, views), and any attached image</li>
+    <li>The author's profile picture URL (fetched to render it correctly in the exported card)</li>
+  </ul>
+  <p>This data is used solely to render the card preview and generate the PNG you download. It is not stored beyond the lifetime of the current browser session.</p>
+
+  <h2>Avatar image fetching</h2>
+  <p>To render the author's profile picture correctly in the exported PNG, PostFrame's background service worker fetches the avatar image from X's image CDN (<code>pbs.twimg.com</code>) and converts it to a data URL in memory. This fetch happens entirely within your browser — the image data is not sent to any PostFrame server or stored anywhere.</p>
+
+  <h2>Does PostFrame collect or transmit personal data?</h2>
+  <p><strong>No personal data is collected or transmitted.</strong> PostFrame does not record, store, or share any X post content, usernames, or browsing activity with any PostFrame server or third party.</p>
+
+  <h2>What is stored locally?</h2>
+  <p>PostFrame uses <code>chrome.storage.local</code> solely to store your UI preferences (such as light or dark theme). This data never leaves your device and can be cleared at any time by removing the extension.</p>
+
+  <h2>Permissions explained</h2>
+  <ul>
+    <li><strong>activeTab</strong> — required to read the X post you are viewing in order to extract content for the card.</li>
+    <li><strong>storage</strong> — used only for local UI preference storage as described above.</li>
+    <li><strong>Host permission (x.com, twitter.com)</strong> — required for the content script to run on X pages and inject the snapshot button. The extension is completely inactive on all other websites.</li>
+    <li><strong>Host permission (pbs.twimg.com)</strong> — required for the background service worker to fetch profile avatar images for correct rendering in the exported card.</li>
+  </ul>
+
+  <h2>Third-party services</h2>
+  <p>PostFrame uses the following third-party services:</p>
+  <ul>
+    <li><strong><a href="https://sentry.io" target="_blank" rel="noopener">Sentry</a></strong> — for crash and error reporting. If the extension encounters an unhandled error, a report containing the error message and stack trace may be sent to Sentry. This report does not contain any X post content or personally identifiable information. See <a href="https://sentry.io/privacy/" target="_blank" rel="noopener">sentry.io/privacy</a>.</li>
+    <li><strong><a href="https://posthog.com" target="_blank" rel="noopener">PostHog</a></strong> — for anonymous usage analytics. PostFrame sends anonymised events (such as "snapshot taken") to PostHog to help understand how the extension is used. No post content, usernames, or personally identifiable information is included in these events. See <a href="https://posthog.com/privacy" target="_blank" rel="noopener">posthog.com/privacy</a>.</li>
+  </ul>
+
+  <h2>Children's privacy</h2>
+  <p>PostFrame is not directed at children under 13 and does not knowingly collect any information from children.</p>
+
+  <h2>Changes to this policy</h2>
+  <p>If this policy changes materially, the "Last updated" date above will be updated. Continued use of the extension after any changes constitutes acceptance of the updated policy.</p>
+
+  <h2>Contact</h2>
+  <p>Questions about this policy can be sent to <a href="mailto:snow.650@gmail.com">snow.650@gmail.com</a>.</p>
+
+  <hr />
+  <p style="font-size:0.8rem; color:#999;">PostFrame is an independent project and is not affiliated with X Corp., Twitter, or any related entities.</p>
+</body>
+</html>
